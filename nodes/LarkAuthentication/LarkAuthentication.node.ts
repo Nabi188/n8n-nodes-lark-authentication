@@ -1,10 +1,4 @@
-import { IExecuteFunctions } from 'n8n-core';
-import {
-  INodeExecutionData,
-  INodeType,
-  INodeTypeDescription,
-  NodeApiError,
-} from 'n8n-workflow';
+import { INodeType, INodeTypeDescription } from 'n8n-workflow';
 
 export class LarkAuthentication implements INodeType {
   description: INodeTypeDescription = {

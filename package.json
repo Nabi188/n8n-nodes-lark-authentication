@@ -1,20 +1,56 @@
 {
   "name": "n8n-nodes-lark-authentication",
-  "version": "0.0.3",
+  "version": "1.0.2",
   "description": "A custom n8n node to get tenant access token from Lark API",
-  "main": "dist/LarkAuthentication.node.js",
-  "types": "dist/LarkAuthentication.node.d.ts",
-  "scripts": {
-    "build": "tsc"
-  },
-  "keywords": ["n8n", "n8n-node", "lark", "authentication"],
-  "author": "Your Name",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "lark"
+  ],
   "license": "MIT",
-  "dependencies": {
-    "n8n-core": "^0.114.0",
-    "n8n-workflow": "^0.114.0"
+  "homepage": "https://websitegiare.net",
+  "author": {
+    "name": "Bin",
+    "email": "binhsg.contact@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nabis188/n8n-nodes-lark-authentication.git"
+  },
+  "engines": {
+    "node": ">=18.10",
+    "pnpm": ">=9.1"
+  },
+  "packageManager": "pnpm@9.1.4",
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "build": "tsc && gulp build:icons",
+    "dev": "tsc --watch",
+    "format": "prettier nodes credentials --write",
+    "lint": "eslint nodes credentials package.json",
+    "lintfix": "eslint nodes credentials package.json --fix",
+    "prepublishOnly": "pnpm build && pnpm lint -c .eslintrc.prepublish.js nodes credentials package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "nodes": [
+      "dist/nodes/LarkAuthentication/LarkAuthentication.node.js"
+    ]
   },
   "devDependencies": {
-    "typescript": "^5.0.0"
+    "@typescript-eslint/parser": "^7.15.0",
+    "eslint": "^8.56.0",
+    "eslint-plugin-n8n-nodes-base": "^1.16.1",
+    "gulp": "^4.0.2",
+    "n8n-workflow": "*",
+    "prettier": "^3.3.2",
+    "typescript": "^5.5.3"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
   }
 }
