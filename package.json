@@ -1,6 +1,7 @@
+
 {
   "name": "n8n-nodes-lark-authentication",
-  "version": "1.0.4",
+  "version": "1.0.10",
   "description": "A custom n8n node to get tenant access token from Lark API",
   "keywords": [
     "n8n-community-node-package",
@@ -8,9 +9,9 @@
     "lark"
   ],
   "license": "MIT",
-  "homepage": "https://websitegiare.net",
+  "homepage": "https:websitegiare.net",
   "author": {
-    "name": "Bin",
+    "name": "Websitegiare.net",
     "email": "binhsg.contact@gmail.com"
   },
   "repository": {
@@ -20,26 +21,32 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc && gulp build:icons",
-    "dev": "tsc --watch"
+    "dev": "tsc --watch",
+    "format": "prettier nodes --write",
+    "lint": "eslint nodes package.json",
+    "lintfix": "eslint nodes package.json --fix",
+    "prepublishOnly": "npm run build && npm run lint -c .eslintrc.prepublish.js nodes package.json"
   },
   "files": [
     "dist"
   ],
   "n8n": {
     "n8nNodesApiVersion": 1,
+    "credentials": [],
     "nodes": [
       "dist/nodes/LarkAuthentication/LarkAuthentication.node.js"
     ]
   },
   "devDependencies": {
-    "@typescript-eslint/parser": "~5.45",
-    "eslint-plugin-n8n-nodes-base": "^1.11.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "eslint": "^8.57.1",
+    "eslint-plugin-n8n-nodes-base": "^1.16.2",
     "gulp": "^4.0.2",
     "n8n-workflow": "*",
-    "prettier": "^2.7.1",
-    "typescript": "~4.8.4"
+    "prettier": "^3.3.3",
+    "typescript": "~5.5.4"
   },
-  "peerDependencies": {
-    "n8n-workflow": "*"
+  "dependencies": {
   }
 }
+
