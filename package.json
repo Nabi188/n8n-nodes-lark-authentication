@@ -1,14 +1,14 @@
 {
   "name": "n8n-nodes-lark-authentication",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A custom n8n node to get tenant access token from Lark API",
   "main": "dist/LarkAuthentication.node.js",
   "types": "dist/LarkAuthentication.node.d.ts",
   "scripts": {
     "build": "tsc"
   },
-  "keywords": ["n8n", "n8n-nodes", "lark", "authentication"],
-  "author": "Websitegiare.net",
+  "keywords": ["n8n", "n8n-node", "lark", "authentication"],
+  "author": "Your Name",
   "license": "MIT",
   "dependencies": {
     "n8n-core": "^0.114.0",
