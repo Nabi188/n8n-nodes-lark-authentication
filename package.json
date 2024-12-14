@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-lark-authentication",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A custom n8n node to get tenant access token from Lark API",
   "main": "dist/LarkAuthentication.node.js",
   "types": "dist/LarkAuthentication.node.d.ts",
